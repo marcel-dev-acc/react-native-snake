@@ -6,7 +6,6 @@ import {
 } from 'react-native';
 
 import COLOURS from '../../constants/colours';
-import SCREEN from '../../constants/device';
 
 const Controls = ({ engine }: any) => {
 
@@ -21,7 +20,10 @@ const Controls = ({ engine }: any) => {
         <TouchableOpacity onPress={() => { engine.dispatch({ type: 'move-left' }) }}>
           <View style={styles.control}></View>
         </TouchableOpacity>
-        <View style={[styles.control, { backgroundColor: COLOURS.BLACK }]}></View>
+        <View style={[styles.control, {
+          backgroundColor: COLOURS.BLACK,
+          width: 150,
+        }]}></View>
         <TouchableOpacity onPress={() => { engine.dispatch({ type: 'move-right' }) }}>
           <View style={styles.control}></View>
         </TouchableOpacity>
@@ -37,6 +39,7 @@ const Controls = ({ engine }: any) => {
 
 const styles = StyleSheet.create({
   controls: {
+    marginTop: 50,
     width: 300,
     heigth: 300,
     flexDirection: 'column',
@@ -47,6 +50,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 10,
   },
   control: {
     width: 100,
